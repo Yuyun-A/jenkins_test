@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('move') {
       agent {
         node {
           label 'nx'
@@ -9,7 +9,14 @@ pipeline {
 
       }
       steps {
-        echo 'building...'
+        sh '''cd ${ISAAC_ROS_WS}
+cd src/isaac_ros_common/'''
+      }
+    }
+
+    stage('docker run') {
+      steps {
+        sh './scripts/run_mydev.sh '
       }
     }
 
