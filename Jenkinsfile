@@ -15,6 +15,12 @@ cd src/isaac_ros_common/'''
     }
 
     stage('docker run') {
+      agent {
+        node {
+          label 'nx'
+        }
+
+      }
       steps {
         sh './scripts/run_mydev.sh '
       }
