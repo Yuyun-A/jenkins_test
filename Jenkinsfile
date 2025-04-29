@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'nx'
+    }
+
+  }
   stages {
     stage('move') {
       agent {
@@ -9,7 +14,8 @@ pipeline {
 
       }
       steps {
-        sh '''cd ${ISAAC_ROS_WS}
+        sh '''docker run hello-world
+cd ${ISAAC_ROS_WS}
 cd src/isaac_ros_common/'''
       }
     }
