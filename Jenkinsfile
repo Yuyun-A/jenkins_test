@@ -14,7 +14,7 @@ pipeline {
 
       }
       steps {
-        sh '''docker run hello-world
+        sh '''docker --version
 cd ${ISAAC_ROS_WS}
 cd src/isaac_ros_common/'''
       }
