@@ -14,9 +14,7 @@ pipeline {
 
       }
       steps {
-        sh '''docker --version
-cd ${ISAAC_ROS_WS}
-cd src/isaac_ros_common/'''
+        echo 'OK'
       }
     }
 
@@ -28,7 +26,7 @@ cd src/isaac_ros_common/'''
 
       }
       steps {
-        sh './scripts/run_mydev.sh '
+        echo 'or NOT?'
       }
     }
 
