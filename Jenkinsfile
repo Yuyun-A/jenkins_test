@@ -8,8 +8,8 @@ pipeline {
   stages {
     stage('move') {
       agent {
-        node {
-          label 'nx'
+        docker {
+          image 'hello-world'
         }
 
       }
@@ -19,12 +19,7 @@ pipeline {
     }
 
     stage('docker run') {
-      agent {
-        node {
-          label 'nx'
-        }
-
-      }
+      agent any
       steps {
         echo 'or NOT?'
       }
